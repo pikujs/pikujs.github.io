@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html lang = "en-US">
 <head>
-  <meta charset = "utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!--
     File: /~jason/index.html
-    Jason Downing - student at UMass Lowell
-    Contact: jdowning@cs.uml.edu or jason_downing@student.uml.edu
+    Jason Downing
+    Contact: jason@downing.io
     MIT Licensed - see http://opensource.org/licenses/MIT for details.
     Anyone may freely use this code. Just don't sue me if it breaks stuff.
     Created: September 3rd, 2015.
-    Last Updated: Oct 14, 2015 at 5:30PM
+    Last Updated: July 21st, 2016.
   -->
 
-  <!--
-    Google fonts. Included here at the very top for performance gains and to avoid the use of @import
-    like Google recommends here:
-    http://googlewebfonts.blogspot.com/2010/09/optimizing-use-of-google-font-api.html
-   -->
-   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu|Advent+Pro">
-
-  <!--  Configuration.
-        The viewport / width / scale line helps make the web page more responsive to mobile devices.
-        Bootstrap is also being used for its grid system and for the Nav bar. -->
-  <meta name = "viewport" content = "width = device-width, initial-scale = 1, maximum-scale = 1, user-scalable = no">
-
   <!-- Custom Title Bar -->
-  <title>Jason Downing - Home Page</title>
+  <title>Jason Downing</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel = "stylesheet" href="css/bootstrap.min.css">
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel = "stylesheet" href="css/bootstrap-theme.min.css">
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
 
-  <!-- CSS file to override stuff -->
-  <link rel = "stylesheet" href = "css/index.css">
+  <!-- Custom Fonts -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Custom favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -50,378 +43,501 @@
   </script>
 </head>
 
-<body>
+<body id="page-top" class="index">
 
-  <!-- This is the Nav Bar, for switching between pages. It should automatically become smaller on Mobile.
-  (Test this though!)
+  <!-- Navigation -->
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+          </div>
 
-  Note: I originally wrote part of this for another web page, and I reworked it for this web page (notedly adding
-  the dropdown menu for linking to additional assignments).
-  You can find the original source code in this repository:
-
-  https://github.com/JasonD94/repair
-  https://github.com/JasonD94/repair/blob/gh-pages/index.html
-   -->
-  <div class = "navbar-wrapper">
-    <div class = "container">
-      <nav class = "navbar navbar-inverse navbar-fixed-top">
-        <div class = "container-fluid">
-
-        <!-- Brand and toggle get grouped together for better mobile display. -->
-        <div class = "navbar-header">
-          <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbar">
-            <span class = "sr-only">Toggle navigation. </span>
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-          </button>
-          <a class = "navbar-brand" href = "index.html">Jason Downing</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling. -->
-        <div id = "navbar" class = "navbar-collapse collapse">
-          <ul class = "nav navbar-nav navbar-right">
-            <li class = "active"><a href = "index.html">Home</a></li>
-            <li><a href = "#About">About</a></li>
-            <li><a href = "#GitHub">GitHub</a></li>
-            <li><a href = "#Contact">Contact Jason</a></li>
-            <li><a href = "img/resume.pdf">Jason's Resume</a></li>
-          </ul>
-        </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#portfolio">Portfolio</a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#about">About</a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#contact">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
       </div>
-    </nav>
-  </div>
-  </div>
+      <!-- /.container-fluid -->
+  </nav>
 
-  <!-- The main container - required for Bootstrap. (see: http://getbootstrap.com/css/ for more info)-->
-  <div class="container">
-    <!--
-    First row - Large title, plus photo / About paragraph
-    Note: the id "About" is just for linking on the page using the Nav Bar.
-    I found out how to do this correctly at this Stackoverflow page:
-    https://stackoverflow.com/questions/20605009/linking-within-a-page-with-bootstrap -->
-    <div class = "row">
-
-        <!--
-        I found this on Stackoverflow. I'm using this trick to make the "About" link
-        actually go all the way to the top of the page. It offsets by 50px which is enough.
-        See this page:  https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
-        -->
-        <a class="anchor"  id="About"></a>
-
-        <!-- Background image is in the body -->
-        <h1 class="name">
-            <span class="highlight">Jason Downing</span>
-        </h1>
-
-        <!-- These columns have been optimized for mobile, tablet and desktop views.
-
-        Note: the XS columns are set to 12 in order to prevent the contact image from overlapping the text.
-        This bug made it hard to read the text on mobile and it looked bad.
-
-        Also, the center div is there to improve mobile display as well, since I have the grids setup to make the image
-        appear on its own line on mobile.                -->
-        <div class="col-xs-12 col-md-3 col-lg-2">
-            <div class = "center_text_images">
-
-                <!-- I thought it would be funny to link to a YouTube video whenever someone clicks on my image.
-                        I embedded it in another HTML file with autoplay enabled.
-                        This site showed me how  to do so:
-                        http://www.computerhope.com/issues/ch000059.htm                -->
-                <a href="youtube.html">
-                    <img class="img-square" src="img/jason_contact_photo.png" style="height: 200px" alt="Jason Downing"/>
-                </a>
-
-            </div>
-        </div>
-
-        <!-- About info -->
-        <div class="col-xs-12 col-md-9 col-lg-10">
-            <div class = "left_align">
-
-                <!-- Start of the about paragraphs. -->
-                <div class="highlight">
-                    Jason Downing is a Junior at the University of Massachusetts, Lowell, where he studies Computer Science.
-                    Jason's hobbies include
-                    <!-- I decided to link to pages / images in this part for fun. -->
-                    <a href="img/bike.jpg">mountain biking,</a>
-                    <a href="img/ski.jpg">skiing,</a>
-                    <!-- Found at the following URL:
-                        http://sapphirenation.net/wp-content/uploads/2015/07/steam-os-planet-steam-logo.jpg
-                     -->
-                    <a href="img/steam.jpg">PC gaming</a>
-                    and
-                    <!-- Found at the following URL:
-                        https://steve.files.wordpress.com/2006/03/Matrix%20tut%202.jpg
-                     -->
-                    <a href="img/code.jpg">coding.</a>
-                </div>
-                <br>
-
-                <div class="highlight">
-                    In the past, Jason has worked at several retail stores,
-                    including Sears, Kohl's and Market Basket.
-                    He currently works for the Engaging Computer Group at UMass Lowell,
-                    and recently finished an internship at Fidelity Investments as a
-                    technical intern during Summer 2015. Jason spent Summer 2015 writing
-
-                    <!-- These are links to Wikipedia because people tend to not know anything about mainframes.
-                    (and I didn't either before this summer.) -->
-                    <a href="https://en.wikipedia.org/wiki/COBOL">COBOL,</a>
-                    <a href="https://en.wikipedia.org/wiki/Job_Control_Language">JCL</a>
-                    and
-                    <a href="https://en.wikipedia.org/wiki/IBM_DB2">DB2</a>
-                    /
-                    <a href="https://en.wikipedia.org/wiki/SQL">SQL queries</a>
-                    for Fidelity's Brokerage system, which runs on
-                    <!-- Link to a interesting article on IBM's z13 system. -->
-                    <a href="http://www.wired.com/2015/01/z13-mainframe/">IBM Mainframes.</a>
-                    Jason will also be interning again at Fidelity Investments next summer on the Android Dev team.
-                </div>
-                <br>
-
-                <div class="highlight">
-                    Jason is active on
-                    <a href="https://github.com/JasonD94">Github</a>
-                    and has various projects for school, as well as side projects with friends and on his own.
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-
-    <br><br>                <!-- Adding line breaks to make the display nicer. -->
-
-    <!--
-                I redid this section so that it just shows href links to my GitHub Repositories
-                Before I was using an awesome tool from this GitHub Repository:
-                https://github.com/lepture/github-cards
-
-                I now only use one GitHub card, in an effort to speedup the loading of my page.
-    -->
-    <div class = "row">
-
-        <!-- These divs are to force the text into the middle and prevent highlighting the whole column! -->
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-
-            <!-- Similar to the #About link, this is for the #GitHub link. -->
-            <a class="anchor"  id="GitHub"></a>
-
-            <p class = "highlight_text_underline_centered">Jason's GitHub Repositories </p>
-
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-
-    <br>               <!-- Adding line breaks to make the display nicer. -->
-
-    <!-- GitHub Card row -->
-    <div class = "row">
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8">
-
-            <!--
-                    This comes from the following GitHub Repository:
-                    https://github.com/lepture/github-cards
-
-                    It shows some random stats about my GitHub account.
-             -->
-             <div class="center_text_images">
-                <div class="github-card" data-user="JasonD94"></div>
-                <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-            </div>
-        </div>
-
-        <div class="col-md-2"></div>
-    </div>
-
-    <br>                <!-- Adding line breaks to make the display nicer. -->
-
-    <!-- GitHub Repositories row -->
-    <div class = "row">
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8">
-            <!--
-                    Unordered list of GitHub Repositories I own, or have contributed to (eg forks).
-                    w3schools had a good overview for this, since I couldn't quite remember how they work.
-                    http://www.w3schools.com/html/html_lists.asp
-             -->
-             <ul>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/College-Public">College-Public</a>: previous semesters work, that
-                    I have put into a GitHub repository as a sort of "portfolio" of my prior classwork.
-                    I keep all my current work in a private repository. You should check out the
-                    <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>
-                    if you want 5 free private GitHub repositories while you're a student.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/UML-Alerts">UML-Alerts</a>: an Android application that I co-developed
-                    for the Android Development class at UMass Lowell. It uses SMS to send messages to a list of contact(s) with
-                    a Google Maps URL embeded at the end of the message with the user's current location.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/Ubuntu-Settings">Ubuntu-Settings</a>:  settings that I customized for
-                    running Ubuntu 14.04 LTS. Includes a few bash scripts that install several of my most used programs.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/iSENSE-API">iSENSE-API</a>: I wrote a C++ API wrapper for a project
-                    called
-                    <a href="http://isenseproject.org">iSENSE.</a>
-                    I also contributed to earlier versions of the JavaScript / Python API wrappers.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/Teaching">isenseDev/Teaching</a>: I wrote some example code for
-                    the C++ API wrapper I mentioned above. I also contributed some early example code in JavaScript / Python.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/HTML-Apps">HTML-Apps</a>: I wrote a variety of HTML5 WebApps for
-                    a project called iSENSE.
-                </li>
-                <li class="white_text">
-                    <a href="https://github.com/JasonD94/HighSchool">HighSchool</a>: contains some random C++ programs
-                    that I wrote for two high school classes.
-                </li>
-             </ul>
-        </div>
-
-        <div class="col-md-2"></div>
-    </div>
-
-    <br><br>                <!-- Adding line breaks to make the display nicer. -->
-
-    <!-- Contact info -->
-    <div class = "row">
-        <div class="col-md-12">
-            <!-- Removed extra div with class "center" - using just a span instead for easier readability. -->
-            <div class="highlight_centered ">
-                You may contact Jason at either: <a href = "mailto:jdowning@cs.uml.edu">jdowning@cs.uml.edu</a>
-                or <a href = "mailto:jason_downing@student.uml.edu">jason_downing@student.uml.edu</a>
-            </div>
-        </div>
-    </div>
-
-    <br><br>                <!-- Adding line breaks to make the display nicer. -->
-
-    <a class="anchor"  id="Contact"></a>
-    <!--      Contact Form.
-                Powered by Mandrill, a JavaScript API
-                I used the following site as a reference:
-                http://codepen.io/riyadhalnur/pen/gbApi/?editors=101
-
-                I also wrote a similar form here:
-                https://github.com/JohnShep/repair/blob/master/contact.html
-
-                I simplified this one by just using inputs though, and Bootstrap's grid system.      -->
-    <div class = "row">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">
-            <div class="highlight_centered">
-            Or contact him using the form below:
-            </div>
-        </div>
-
-        <div class="col-md-3"></div>
-    </div>
-
-    <!-- Name section -->
-    <div class = "row">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-2">
-            <div class="highlight_right_aligned">
-            Name:
-            </div>
-        </div>
-        <div class="col-md-4">
-            <input id="name" name="name" type="text" placeholder="Enter your name here"
-            class="form-control input-md" required="">
-        </div>
-
-        <div class="col-md-1"></div>
-    </div>
-
-    <!-- Email section -->
-    <div class = "row">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-2">
-            <div class="highlight_right_aligned">
-            Email:
-            </div>
-        </div>
-        <div class="col-md-4">
-            <input id="email" name="name" type="text" placeholder="Enter your email here"
-            class="form-control input-md" required="">
-        </div>
-
-        <div class="col-md-1"></div>
-    </div>
-
-    <!-- Message section -->
-    <div class = "row">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-2">
-            <div class="highlight_right_aligned">
-            Message:
-            </div>
-        </div>
-        <div class="col-md-4">
-            <textarea class="form-control" id="msg" name="msg" cols="6" rows="6"></textarea>
-        </div>
-
-        <div class="col-md-1"></div>
-    </div>
-
-    <br>                <!-- Adding line breaks to make the display nicer. -->
-
-    <!-- Submit Button -->
-    <div class = "row">
-      <div class="col-md-5"></div>
-
-      <div class="col-md-2">
-          <!--
-                  this button calls the JavaScript function "sendEmail". See email.js in the JS folder for more info.
-                  Also - this Stackoverflow post was pretty helpful:
-                  https://stackoverflow.com/questions/1947263/using-an-html-button-to-call-a-javascript-function
-          -->
-          <button id="submit" name="submit" class="btn btn-primary" onclick="sendEmail();">Send Message</button>
+  <!-- Header -->
+  <header>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <img class="img-responsive" src="img/profile.png" alt="">
+                  <div class="intro-text">
+                      <span class="name">Start Bootstrap</span>
+                      <hr class="star-light">
+                      <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                  </div>
+              </div>
+          </div>
       </div>
+  </header>
 
-      <div class="col-md-5"></div>
-    </div>
+  <!-- Portfolio Grid Section -->
+  <section id="portfolio">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2>Portfolio</h2>
+                  <hr class="star-primary">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                      <div class="caption">
+                          <div class="caption-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
-    <br><br>                <!-- Adding line breaks to make the display nicer. -->
+  <!-- About Section -->
+  <section class="success" id="about">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2>About</h2>
+                  <hr class="star-light">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-4 col-lg-offset-2">
+                  <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+              </div>
+              <div class="col-lg-4">
+                  <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+              </div>
+              <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <a href="#" class="btn btn-lg btn-outline">
+                      <i class="fa fa-download"></i> Download Theme
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
-    <!-- THIS IS THE FOOTER - displays a copyright notice and that Bootstrap powers this webpage. -->
-    <div class = "center_text_small">
-      <p class = "text-muted"><span class = "highlight">
-        Jason Downing &copy; 2015. All rights reserved.
-        Powered by <a href = "http://www.getbootstrap.com/">Bootstrap</a>.
-      </span></p>
-    </div>
-  </div>          <!-- This should be the end div of the main container. -->
+  <!-- Contact Section -->
+  <section id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2>Contact Me</h2>
+                  <hr class="star-primary">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                  <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                  <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                  <form name="sentMessage" id="contactForm" novalidate>
+                      <div class="row control-group">
+                          <div class="form-group col-xs-12 floating-label-form-group controls">
+                              <label>Name</label>
+                              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                              <p class="help-block text-danger"></p>
+                          </div>
+                      </div>
+                      <div class="row control-group">
+                          <div class="form-group col-xs-12 floating-label-form-group controls">
+                              <label>Email Address</label>
+                              <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                              <p class="help-block text-danger"></p>
+                          </div>
+                      </div>
+                      <div class="row control-group">
+                          <div class="form-group col-xs-12 floating-label-form-group controls">
+                              <label>Phone Number</label>
+                              <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                              <p class="help-block text-danger"></p>
+                          </div>
+                      </div>
+                      <div class="row control-group">
+                          <div class="form-group col-xs-12 floating-label-form-group controls">
+                              <label>Message</label>
+                              <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                              <p class="help-block text-danger"></p>
+                          </div>
+                      </div>
+                      <br>
+                      <div id="success"></div>
+                      <div class="row">
+                          <div class="form-group col-xs-12">
+                              <button type="submit" class="btn btn-success btn-lg">Send</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
 
-  <!--
-      These are moved to the bottom of the <body> tag to increase website load time.
-      This stackoverflow post is helpful for this issue:
-      https://stackoverflow.com/questions/6625773/where-should-i-put-the-css-and-javascript-code-in-an-html-webpage
+  <!-- Footer -->
+  <footer class="text-center">
+      <div class="footer-above">
+          <div class="container">
+              <div class="row">
+                  <div class="footer-col col-md-4">
+                      <h3>Location</h3>
+                      <p>3481 Melrose Place
+                          <br>Beverly Hills, CA 90210</p>
+                  </div>
+                  <div class="footer-col col-md-4">
+                      <h3>Around the Web</h3>
+                      <ul class="list-inline">
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="footer-col col-md-4">
+                      <h3>About Freelancer</h3>
+                      <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer-below">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      Copyright &copy; Your Website 2016
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
 
-      See Yahoo's best practice rules as well:
-      https://developer.yahoo.com/performance/rules.html#css_top=
-   -->
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+      <a class="btn btn-primary" href="#page-top">
+          <i class="fa fa-chevron-up"></i>
+      </a>
+  </div>
 
-   <!-- jQuery (required by Bootstrap) -->
-   <script src = "js/jquery.min.js"></script>
+  <!-- Portfolio Modals -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Project Title</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                          <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                          <ul class="list-inline item-details">
+                              <li>Client:
+                                  <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://startbootstrap.com">April 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Service:
+                                  <strong><a href="http://startbootstrap.com">Web Development</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- Latest compiled and minified Bootstrap JavaScript -->
-  <script src = "js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!-- Email function - powered by Mandrill -->
-  <script src="js/email.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Theme JavaScript -->
+  <script src="js/freelancer.min.js"></script>
+
 </body>
 </html>
