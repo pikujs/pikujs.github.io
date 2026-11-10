@@ -2,3 +2,7 @@
 .idea/
 .idea/workspace.xml
 .projectile
+
+# local scratch: mock iterations and research notes, never deployed
+mockups/
+docs/

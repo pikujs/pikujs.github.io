@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mockups/
+Disallow: /docs/
+
+Sitemap: https://pikujs.com/sitemap.xml

@@ -1,41 +1,72 @@
-downing.io
-================================================================================
+# pikujs.com
 
-Source code for my personal website. MIT Licensed. Contains a copy of my resume, 
-as well as some links to Github. :octocat:
+Personal site of **Nirmaan J Sarkar** — Engineer · Adventurer · Hobbyist — and the
+homepage of **Pikujs Solutions**, the one-person practice he builds under.
 
-## Forking Note
+Plain static HTML, CSS and ~40 lines of JavaScript. No framework, no build step,
+no client-side rendering: everything you read is in the markup, so search engines
+and link previews get the real page.
 
-If you fork this repo, please change the **form action** to an email address you own before trying it out. [Thaaaanks!](https://i.imgur.com/TpBVEjv.jpg)
+Live at [pikujs.com](https://pikujs.com) on GitHub Pages.
+
+## Structure
 
 ```
-<form action="https://formspree.io/your-email@here.com" method="POST" class="form-horizontal" role="form">
+index.html          homepage — hero, what I do, work, history, about, off the clock, contact
+privacy/index.html  privacy policy   → /privacy/
+terms/index.html    terms of use     → /terms/
+404.html            404, served by GitHub Pages
+css/site.css        one stylesheet for every page
+js/palette.js       palette switching only
+img/                hero, photos, resume.pdf
+robots.txt          sitemap pointer, blocks /mockups/ and /docs/
+sitemap.xml         three public URLs
 ```
 
-Built using:
---------------------------------------------------------------------------------
-[HTML5](https://developers.google.com/web/)  
-[Bootstrap](http://getbootstrap.com/) for CSS  
-[jQuery](https://jquery.com/) for JS  
-[namecheap](https://www.namecheap.com/) for the awesome domain  
-[GitHub Pages](https://pages.github.com/) for hosting  
-[CloudFlare](https://www.cloudflare.com/) for the SSL cert and fancy green lock :lock:  
-[git](https://git-scm.com/) for source control
+## Palettes
 
-Based on the
-[Creative Bootstrap theme](http://startbootstrap.com/template-overviews/creative/)
-from [Start Bootstrap](http://startbootstrap.com/).
-The theme is also MIT Licensed.
+Three, switchable from the control in the bottom-right corner or with keys `1`/`2`/`3`:
 
-View it here: [downing.io](https://downing.io/)
+| palette | role |
+|---|---|
+| `paper` | warm off-white, the light default |
+| `night` | dark default |
+| `duotone` | high-contrast red, opt-in only |
 
-Check out some of my other webpages at 
-[github.com/JasonD94/](https://github.com/JasonD94/)
+First load follows the OS: `prefers-color-scheme: dark` → `night`, otherwise
+`paper`. An explicit click is stored in `localStorage` and wins from then on.
+The palette is applied by an inline snippet in `<head>` so there is no flash of
+the wrong theme; `js/palette.js` only handles the buttons, keys and OS changes.
 
-##### NOTE:
+## Local preview
 
-I have a custom domain connected to GitHub, so my GitHub Pages repositories 
-do not follow the usual GITHUB-USERNAME-HERE.github.io/REPOSITORY-NAME-HERE format. 
-Instead they follow a "downing.io/REPOSITORY-NAME-HERE" format. 
-If the domain fails for some reason, you can still access my site by going to 
-[https://jasond94.github.io](https://jasond94.github.io)
+The site is origin-rooted (`/css/...` is avoided, but `privacy/` and `terms/` are
+directories), so serve the repo root rather than opening the file directly:
+
+```sh
+python3 -m http.server 8088
+# then open http://localhost:8088/
+```
+
+## Deploying
+
+Push to `master`. GitHub Pages serves the repo root; `CNAME` points at
+`pikujs.com`. There is nothing to build — what is committed is what is served.
+
+`mockups/` and `docs/` are git-ignored working notes (design iterations, a
+direction-research report) and never deploy.
+
+## Adding a project
+
+The work grid is hand-written HTML in `index.html`: copy an existing `<a class="card">`
+block, set `data-cat` to `Software`, `Research` or `Creative`, and update the tags,
+title, summary and `href`. Linked cards get `Code ↗`; unlinked ones show the year.
+
+## Credits
+
+- Header photo and the guitar/trekking shots are his own.
+- Typefaces: Instrument Serif and Inter Tight via Google Fonts.
+- Layout and copy are original; nothing is left from the site's earlier
+  Bootstrap/jQuery theme.
+
+MIT licensed — see [LICENSE](LICENSE).
